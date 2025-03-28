@@ -4,7 +4,7 @@ document.getElementById("uploadForm").addEventListener("submit", async (e) => {
   const description = document.getElementById("imageDescription").value;
 
   try {
-    const response = await fetch("http://localhost:5000/api/images", {
+    const response = await fetch("http://localhost:3000/api/images", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -27,7 +27,7 @@ document.getElementById("uploadForm").addEventListener("submit", async (e) => {
 
 async function fetchImages() {
   try {
-    const response = await fetch("http://localhost:5000/api/images");
+    const response = await fetch("http://localhost:3000/api/images");
     const images = await response.json();
 
     const galleryEl = document.getElementById("imageGallery");
@@ -78,7 +78,7 @@ async function addComment(e, imageId) {
 
   try {
     const response = await fetch(
-      `http://localhost:5000/api/images/${imageId}/comments`,
+      `http://localhost:3000/api/images/${imageId}/comments`,
       {
         method: "POST",
         headers: {
